@@ -4,9 +4,9 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="Nicholas Bennett"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2020-01-14 01:56:29 PM"/>
+        <attribute name="saved" value="2020-01-14 02:31:47 PM"/>
         <attribute name="created" value="TmljaG9sYXMgQmVubmV0dDtOQi1JTlNQSVJPTi0xNTsyMDIwLTAxLTE0OzAxOjA5OjQ5IFBNOzM4MDg="/>
-        <attribute name="edited" value="TmljaG9sYXMgQmVubmV0dDtOQi1JTlNQSVJPTi0xNTsyMDIwLTAxLTE0OzAxOjU2OjI5IFBNOzE7MzkxNg=="/>
+        <attribute name="edited" value="TmljaG9sYXMgQmVubmV0dDtOQi1JTlNQSVJPTi0xNTsyMDIwLTAxLTE0OzAyOjMxOjQ3IFBNOzI7MzkxMQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -14,10 +14,17 @@
             <output expression="&quot;Please enter a temperature in degrees Celsius.&quot;" newline="True"/>
             <declare name="degreesCelsius" type="Real" array="False" size=""/>
             <input variable="degreesCelsius"/>
+            <output expression="&quot;Temperature in degrees Fahrenheit = &quot;" newline="False"/>
+            <output expression="convertC2F(degreesCelsius)" newline="True"/>
+        </body>
+    </function>
+    <function name="convertC2F" type="Real" variable="degreesFahrenheit">
+        <parameters>
+            <parameter name="degreesCelsius" type="Real" array="False"/>
+        </parameters>
+        <body>
             <declare name="degreesFahrenheit" type="Real" array="False" size=""/>
             <assign variable="degreesFahrenheit" expression="9 * degreesCelsius / 5 + 32"/>
-            <output expression="&quot;Temperature in degrees Fahrenheit = &quot;" newline="False"/>
-            <output expression="degreesFahrenheit" newline="True"/>
         </body>
     </function>
 </flowgorithm>
