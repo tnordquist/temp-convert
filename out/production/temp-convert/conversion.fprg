@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Nicholas Bennett"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-01-14 03:36:36 PM"/>
+        <attribute name="created" value="TmljaG9sYXMgQmVubmV0dDtOQi1JTlNQSVJPTi0xNTsyMDIwLTAxLTE0OzAxOjA5OjQ5IFBNOzM4MDg="/>
+        <attribute name="edited" value="TmljaG9sYXMgQmVubmV0dDtOQi1JTlNQSVJPTi0xNTsyMDIwLTAxLTE0OzAzOjM2OjM2IFBNOzQ7MzkxNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="repeat" type="Boolean" array="False" size=""/>
+            <assign variable="repeat" expression="true"/>
+            <while expression="repeat">
+                <output expression="&quot;Please enter a temperature in degrees Celsius. (Press &lt;Enter&gt; to quit.)&quot;" newline="True"/>
+                <declare name="userInput" type="String" array="False" size=""/>
+                <declare name="degreesCelsius" type="Real" array="False" size=""/>
+                <input variable="userInput"/>
+                <if expression="Len(userInput) &gt; 0">
+                    <then>
+                        <assign variable="degreesCelsius" expression="ToReal(userInput)"/>
+                        <output expression="&quot;Temperature in degrees Fahrenheit = &quot;" newline="False"/>
+                        <output expression="convertC2F(degreesCelsius)" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="repeat" expression="false"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Goodbye!&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="convertC2F" type="Real" variable="degreesFahrenheit">
+        <parameters>
+            <parameter name="degreesCelsius" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="degreesFahrenheit" type="Real" array="False" size=""/>
+            <assign variable="degreesFahrenheit" expression="9 * degreesCelsius / 5 + 32"/>
+        </body>
+    </function>
+</flowgorithm>
